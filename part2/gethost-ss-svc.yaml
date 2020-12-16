@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: gethost-ss
+  name: gethost-ss
+spec:
+  clusterIP: None
+  selector:
+    app: gethost-label
+  type: ClusterIP

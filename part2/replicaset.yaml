@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: gethost
+  labels:
+    app: gethost
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: gethost-label
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: gethost-label
+        version: v2
+    spec:
+      containers:
+      - name: gethost
+        image: docker.io/akshitgrover/gethost:v2
